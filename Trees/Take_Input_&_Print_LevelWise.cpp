@@ -64,3 +64,5 @@ int main(){
     cout<<"--------------------------------------"<<endl;
     cout<<"The entered tree is : "<<endl;
     printTree(root);
+    return 0;
+}
