@@ -67,11 +67,29 @@ void PrintLevelWise(BinaryTreeNode<int> *root){
     cout<<endl;
     }
 }  
+bool is_node_present(BinaryTreeNode<int> *root,int x){
+    if(root==NULL){
+        return 0;
+    }
+    if(root->data==x){
+        return true;
+    }
+    if(is_node_present(root->left,x)){
+        return true;
+    }
+    if(is_node_present(root->right,x)){
+        return true;
+    }
+    return false;
+}  
 int main(){
     cout<<"Enter the Tree : "<<endl;
     BinaryTreeNode<int> *root=TakeInputLevelWise();
     cout<<"The entered binary tree is : "<<endl;
     PrintLevelWise(root);
+    int x=4;
+    cout<<"the node with data "<<x<<" is present or not : "<<endl;
+    cout<<is_node_present(root,x)<<endl;
     delete(root);
     return 0;
 }
