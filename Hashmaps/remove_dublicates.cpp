@@ -3,15 +3,15 @@
 #include<vector>
 using namespace std;
 
-vector<int> remove_dublicates(int arr[],int size){
+vector<int> remove_dublicates(vector<int> vec,int size){
     vector<int> output;
     unordered_map<int,bool> seen;
     for(int i=0;i<size;i++){
-        if(seen.count(arr[i])>0){
+        if(seen.count(vec[i])>0){
             continue;
         }
-        seen[arr[i]]=true;
-        output.push_back(arr[i]);
+        seen[vec[i]]=true;
+        output.push_back(vec[i]);
     }
     return output;
 }
